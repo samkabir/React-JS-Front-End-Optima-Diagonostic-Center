@@ -1,25 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router';
-import Detail from '../Detail/Detail';
+import useData from '../../../hooks/useData';
+import './Details.css';
 
 const Details = () => {
     const {serviceId} = useParams();
-    const [details, setDetails] = useState([])
-    useEffect( () => {
-        fetch('services.json')
-        .then(res => res.json())
-        .then(data => setDetails(data))
-    },[])
-    console.log(serviceId);
+    const services = useData();
+    const serviceDetail = services?.find(srvc => srvc.id === +serviceId)
+    console.log(serviceDetail);
+    
     
     return (
         <div>
-            {
-                    details.map(detail =><Detail
-                        key={detail.id}
-                        detail={detail}
-                    ></Detail>)
-                }
+            <div className="container detail">
+                <div className="row">
+                    <div className="col-md-6">
+                        <img className="img-fluid detail-img" src={serviceDetail?.img} alt="" />
+                    </div>
+                    <div className="col-md-6">
+                        <h4>{serviceDetail?.name}</h4>
+                        <p>{serviceDetail?.description}</p>
+                        <br />
+                        <h4>Price: {serviceDetail?.price} tk</h4>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

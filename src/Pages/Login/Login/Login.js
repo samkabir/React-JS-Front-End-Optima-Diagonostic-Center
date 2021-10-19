@@ -20,21 +20,18 @@ const Login = () => {
     const handlePasswordChange = e =>{
         setPassword(e.target.value);
     }
-
-    const handleLogin = () => {
-        processLogIn(email, password);
-    }
-    const processLogIn = (email, password) => {
+    const processLogIn = () => {
+        console.log(email, password);
         signInWithEmailAndPassword(auth, email, password)
-        .then(result => {
+        .then(result => { 
             const user = result.user;
             console.log(user);
-            setError('');
-        })
-        .catch(error =>{
+            })
+            .catch( error => {
             setError(error.message);
         });
     }
+    
     return (
         <div className="container-parent">
             <h2>Login <FontAwesomeIcon icon={faSignInAlt} /></h2>
@@ -49,7 +46,7 @@ const Login = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control onBlur={handlePasswordChange} type="password" placeholder="Password" />
                     </Form.Group>
-                    <Button onClick={handleLogin} variant="primary" type="submit">
+                    <Button onClick={processLogIn} variant="primary" type="submit">
                         Submit
                     </Button>
                     <div className="row mb-3 text-danger">
