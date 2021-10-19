@@ -1,0 +1,7 @@
+.doc-container{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.doc-container img{
+    border-radius: 10px;
+}
