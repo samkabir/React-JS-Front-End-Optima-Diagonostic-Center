@@ -1,0 +1,11 @@
+.appointment{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.appointment-container{
+    margin: 50px
+}
+.apt-btn{
+    margin:20px 0px;
+}
