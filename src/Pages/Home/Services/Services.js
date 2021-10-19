@@ -5,12 +5,13 @@ import './Services.css';
 const Services = () => {
     const [services, setServices] = useState([])
     useEffect( () => {
-        fetch('services.json')
+        fetch('services.JSON')
         .then(res => res.json())
         .then(data => setServices(data))
     },[])
     return (
         <div className="container my-5">
+            <h2>Services</h2>
             <div className="service-container">
                 {
                     services.map(service => <Service

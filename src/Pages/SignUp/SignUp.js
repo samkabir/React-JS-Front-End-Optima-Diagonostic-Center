@@ -1,30 +1,63 @@
-import React from 'react';
-import { Button, Form, } from 'react-bootstrap';
+import { getAuth, createUserWithEmailAndPassword } from '@firebase/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SignUp.css';
 
 const SignUp = () => {
+    const [email, setEmail] =useState('');
+    const [password, setPassword] =useState('');
+    const [error, setError] = useState('');
+    const auth = getAuth();
+    
+
+    const handleEmailChange = e =>{
+        setEmail(e.target.value);
+    }
+    const handlePasswordChange = e =>{
+        setPassword(e.target.value);
+    }
+    const handleRegistration = e => {
+        e.preventDefault();
+        console.log(email, password);
+        if(password.length < 6){
+            setError('Password Must be atleast 6 characters long! ');
+            return
+        }
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            setError('');
+        })
+        .catch(error =>{
+            setError(error.message);
+        })
+    }
+
     return (
         <div className="container-parent">
-            <h2>Register!</h2>
-            <div className="m-3 p-3 form-container">
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
-            </div>
-            <p>Already user? <Link to="/login">Login Here!</Link> </p>
-            <br />
+            <h2>Register <FontAwesomeIcon icon={faUserPlus} /></h2>
+            <form onSubmit={handleRegistration}>
+                <div className="row mb-3">
+                    <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                    <div className="col-sm-10">
+                        <input type="email" onBlur={handleEmailChange} className="form-control" id="inputEmail3" required />
+                    </div>
+                </div>
+                <div className="row mb-3">
+                    <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                    <div className="col-sm-10">
+                        <input type="password" onBlur={handlePasswordChange} className="form-control" id="inputPassword3" required />
+                    </div>
+                </div>
+                <div className="row mb-3 text-danger">
+                    {error}
+                </div>
+                <button type="submit" className="btn btn-primary">Register</button>
+                <h6>Already User? <Link to="/login">Login</Link></h6>
+            </form>
         </div>
     );
 };

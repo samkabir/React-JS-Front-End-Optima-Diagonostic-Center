@@ -41,7 +41,7 @@ const ourDoctors = [
 ]
 const Doctors = () => {
     return (
-        <div className="container">
+        <div id="doctors" className="container">
             <h2 className="text-primary">Our Doctors</h2>
             <div className="row">
                 {
