@@ -4,7 +4,7 @@ import './About.css'
 const About = () => {
     return (
         <div className="container">
-            <h2 className="text-primary">The new way to healty life</h2>
+            <h2 className="text-primary">The new way to healthy life</h2>
             <div className="we-are">
                 <h3 className="text-primary">Who We Are</h3>
                 <p>Optima Diagnostic Centre Ltd. is an advanced Centre for diagnostic and medical services. It is one of the prestigious diagnostic complexes of Bangladesh which started its activities in 1983. Optima Diagnostic Centre Ltd. is the largest diagnostic services provider organization in private sector of the country. It is been pioneer in introducing world latest medical equipments and advanced technology to provide round the clock medical investigations and consultancy services.</p>
