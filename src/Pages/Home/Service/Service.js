@@ -7,7 +7,7 @@ const Service = ({service}) => {
     return (
         <div className="service">
             <img className="img-fluid" src={img} alt="" />
-            <h3>{name}</h3>
+            <h3 className="pt-3">{name}</h3>
             <p>{description}</p>
             <Link to={`/details/${id}`}>
                 <button className="btn btn-primary button-custom">Details</button>
