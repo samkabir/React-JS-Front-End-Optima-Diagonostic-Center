@@ -20,7 +20,6 @@ const Header = () => {
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>
                             <Nav.Link as={HashLink} to="/home#doctors">Doctors</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#partners">Partners</Nav.Link>
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                             <Nav.Link as={Link} to="/appointment">Appointment <FontAwesomeIcon icon={faCalendarCheck} /></Nav.Link>
                             {user?.email ? <Button onClick={logOut} className="text-white" variant="outline-dark"> {user?.displayName} Log Out <FontAwesomeIcon icon={faSignOutAlt} /></Button> :
