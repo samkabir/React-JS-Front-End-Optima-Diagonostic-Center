@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import useData from '../../../hooks/useData';
+
 import './Details.css';
 
 const Details = () => {
@@ -17,11 +18,11 @@ const Details = () => {
                     <div className="col-md-6">
                         <img className="img-fluid detail-img" src={serviceDetail?.img} alt="" />
                     </div>
-                    <div className="col-md-6">
-                        <h4>{serviceDetail?.name}</h4>
-                        <p>{serviceDetail?.description}</p>
+                    <div className="col-md-6 text-section">
+                        <h4><i class="fas fa-notes-medical"></i> {serviceDetail?.name} </h4>
+                        <p><i class="fas fa-file-medical"></i> {serviceDetail?.description} </p>
                         <br />
-                        <h4>Price: {serviceDetail?.price} tk</h4>
+                        <h4><i class="fas fa-tag"></i> Price: {serviceDetail?.price} tk</h4>
                     </div>
                 </div>
             </div>

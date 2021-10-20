@@ -1,3 +1,6 @@
 .banner img{
     max-height: 550px;
 }
+.carousel-indicators{
+    display: none;
+}

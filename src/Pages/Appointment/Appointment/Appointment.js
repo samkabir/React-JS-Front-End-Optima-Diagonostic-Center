@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Appointment.css'
 
 const Appointment = () => {
@@ -12,30 +13,30 @@ const Appointment = () => {
                         <label className="visually-hidden" for="autoSizingSelect">Preference</label>
                         <select className="form-select" id="autoSizingSelect">
                         <option selected>Choose...</option>
-                        <option value="1">Dr Asaduzzaman Rasel MBBS, FCPS(ENT)</option>
-                        <option value="2">Prof. Dr. A K M Mustafa Hussain · MBBS, DTCD, MD (Chest)</option>
-                        <option value="3">Prof. Dr. Zeenat Meraj</option>
-                        <option value="4">Dr. Fahmida Zabeen</option>
-                        <option value="5">Dr. Mohammad Rofiqul Islam</option>
-                        <option value="6">Dr Md. Shah Alam</option>
+                        <option value="1">Dr Asaduzzaman Rasel MBBS, FCPS - ENT Specialist</option>
+                        <option value="2">Prof. Dr. A K M Mustafa Hussain MBBS, DTCD, MD(Chest) - Medicine {'&'} Pulmonology Specialist</option>
+                        <option value="3">Prof. Dr. Zeenat Meraj - Oncologist</option>
+                        <option value="4">Dr. Fahmida Zabeen - Pediatric Neonatologist {'&'} Endocrinologist</option>
+                        <option value="5">Dr. Mohammad Rofiqul Islam - Neurologist</option>
+                        <option value="6">Dr Md. Shah Alam - Orthopedist</option>
                         </select>
                     </div>
                     <div className="appointment">
-                        <h6>Name</h6>
+                        <h6>Patient Name</h6>
                         <div className="col-auto">
                             <label className="visually-hidden" for="autoSizingInput">Name</label>
                             <input type="text" className="form-control" id="autoSizingInput" placeholder="Name" />
                         </div>
                     </div>
                     <div className="appointment">
-                        <h6>Address</h6>
+                        <h6>Patient Address</h6>
                         <div className="col-auto">
                             <label className="visually-hidden" for="autoSizingInput">Name</label>
                             <input type="text" className="form-control" id="autoSizingInput" placeholder="Address" />
                         </div>
                     </div>
                     <div className="appointment">
-                        <h6>Phone Number</h6>
+                        <h6>Patient Phone Number</h6>
                         <div className="col-auto">
                             <label className="visually-hidden" for="autoSizingInput">Name</label>
                             <input type="number" className="form-control" id="autoSizingInput" placeholder="Phone Number" />
@@ -48,7 +49,7 @@ const Appointment = () => {
                         </div>
                     </div>
                     <div className="col-auto apt-btn">
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn-primary button-custom"><Link to="/home"><span className="custom-text"> Submit </span></Link></button>
                     </div>
                 </form>
             </div>

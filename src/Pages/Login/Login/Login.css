@@ -1,6 +1,5 @@
 .form-container{
-    width:40%;
-    border:1px solid black;
+    width:50%;
     border: 1px solid black;
     box-shadow: 0px 0px 20px;
     border-radius: 10px;
@@ -11,5 +10,8 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin: 20px;
+}
+.form-check-label{
+    display: flex;
 }

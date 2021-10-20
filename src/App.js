@@ -10,7 +10,6 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import NotFound from './Pages/Not Found/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
-import SignUp from './Pages/SignUp/SignUp';
 
 function App() {
   return (
@@ -29,10 +28,6 @@ function App() {
 
                 <Route path="/login">
                   <Login></Login>
-                </Route>
-
-                <Route path="/signup">
-                  <SignUp></SignUp>
                 </Route>
 
                 <PrivateRoute path="/about">

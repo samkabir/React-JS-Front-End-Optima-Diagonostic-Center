@@ -7,17 +7,17 @@ import './Partners.css';
 
 const Partners = () => {
     return (
-        <div className="partners">
+        <div id="partners" className="partners">
             <h2 className="text-primary">Service Partners</h2>
             <div className="container">
                 <div className="row partners-container">
-                    <div className="col-md-4">
+                    <div className="col-md-4 sponser">
                         <img className="img-fluid" src={partner1} alt="" />
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 sponser">
                         <img className="img-fluid" src={partner2} alt="" />
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 sponser">
                         <img className="img-fluid" src={partner3} alt="" />
                     </div>
                 </div>
