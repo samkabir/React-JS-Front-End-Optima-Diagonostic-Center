@@ -43,6 +43,7 @@ const Login = () => {
 
     //Toggle Register
     const toggleLogin = e =>{
+        setError('');
         setIsRegister(e.target.checked);
         console.log(isRegister);
     }
@@ -54,6 +55,7 @@ const Login = () => {
         .then(result => { 
             const user = result.user;
             console.log(user);
+            setError('');
             history.push(redirect_url);
             })
             .catch( error => {
@@ -112,13 +114,13 @@ const Login = () => {
                 <div className="row mb-3">
                     <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
                     <div className="col-sm-10">
-                        <input onBlur={handleEmailChange} type="email" className="form-control" />
+                        <input onBlur={handleEmailChange} type="email" className="form-control" required />
                     </div>
                 </div>
                 <div className="row mb-3">
                     <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
                     <div className="col-sm-10">
-                        <input type="password" onBlur={handlePasswordChange} className="form-control" />
+                        <input type="password" onBlur={handlePasswordChange} className="form-control" required />
                     </div>
                 </div>
                 <div className="row mb-3 text-danger">
